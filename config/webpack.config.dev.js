@@ -107,15 +107,6 @@ module.exports = {
     fallback: paths.appNodeModules
   },
   module: {
-    // First, run the linter.
-    // It's important to do this before Babel processes the JS.
-    preLoaders: [
-      {
-        test: /\.(js|jsx)$/,
-        loader: 'eslint',
-        include: paths.appSrc,
-      }
-    ],
     loaders: [
       // ** ADDING/UPDATING LOADERS **
       // The "url" loader handles all assets unless explicitly excluded.
@@ -192,12 +183,6 @@ module.exports = {
       // ** STOP ** Are you adding a new loader?
       // Remember to add the new extension(s) to the "url" loader exclusion list.
     ]
-  },
-  // @remove-on-eject-begin
-  // Point ESLint to our predefined config.
-  eslint: {
-    configFile: path.join(__dirname, '../eslintrc'),
-    useEslintrc: false,
   },
   // @remove-on-eject-end
   // We use PostCSS for autoprefixing only.
